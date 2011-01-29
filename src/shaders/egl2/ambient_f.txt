@@ -1,0 +1,10 @@
+uniform	vec2		u_ibs;
+uniform	vec3		u_ambientc;
+uniform	sampler2D	gbuffer1;
+
+void	main()
+{
+	vec2	UV = vec2(gl_FragCoord.x, gl_FragCoord.y) * u_ibs;
+	vec4	diff_alpha = texture2D(gbuffer1, UV);
+	gl_FragColor = vec4(diff_alpha.rgb * u_ambientc, 1.0);
+}

@@ -1,0 +1,4 @@
+<NML=1.0>
+<ViewMode="Project">
+<Input="assets/scene.nms">
+<ViewScene><IgnoreEsc=False><IgnoreMissingResource=True>
