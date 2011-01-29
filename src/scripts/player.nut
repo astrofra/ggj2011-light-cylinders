@@ -26,6 +26,8 @@ class	Player
 	teleport_timeout	=	0
 
 	teleport_sfx		=	0
+	sfx_target_no_ok	=	0
+	sfx_target_ok		=	0
 
 	/*!
 		@short	OnUpdate
@@ -74,11 +76,19 @@ class	Player
 
 	function	TeleportTo(item, target_item)
 	{
+
+		if (GetCylinderTopPosition(target_item).y > ItemGetWorldPosition(item).y)
+		{			
+			MixerSoundStart(EngineGetMixer(g_engine), sfx_target_no_ok)
+			return
+		}
+
 		if (g_clock - teleport_timeout < SecToTick(Sec(0.5)))
 			return
 
 		local	new_pos = GetCylinderTopPosition(target_item)
 
+		MixerSoundStart(EngineGetMixer(g_engine), sfx_target_ok)
 		MixerSoundStart(EngineGetMixer(g_engine), teleport_sfx)
 
 		ItemSetPosition(item, new_pos)
@@ -96,6 +106,8 @@ class	Player
 		teleport_timeout = g_clock
 
 		teleport_sfx = EngineLoadSound(g_engine, "sfx/tp.wav")
+		sfx_target_no_ok = EngineLoadSound(g_engine, "sfx/target_no_ok.wav")
+		sfx_target_ok = EngineLoadSound(g_engine, "sfx/target_ok.wav")
 	}
 
 	function	GetCylinderTopPosition(item_cyl)
