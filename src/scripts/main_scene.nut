@@ -9,6 +9,7 @@
 */
 class	MainScene
 {
+	spawn_sfx	=	0
 	/*!
 		@short	OnUpdate
 		Called each frame.
@@ -24,5 +25,12 @@ class	MainScene
 	{
 		print("MainScene::OnSetup()")
 		SceneSetCurrentCamera(scene, ItemCastToCamera(SceneFindItem(scene, "game_camera")))
+		spawn_sfx = EngineLoadSound(g_engine, "sfx/spawn.wav")
+		SpawnSfx()
+	}
+
+	function	SpawnSfx()
+	{
+		MixerSoundStart(EngineGetMixer(g_engine), spawn_sfx)
 	}
 }

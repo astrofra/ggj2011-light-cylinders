@@ -25,6 +25,8 @@ class	Player
 
 	teleport_timeout	=	0
 
+	teleport_sfx		=	0
+
 	/*!
 		@short	OnUpdate
 		Called during the scene update, each frame.
@@ -75,8 +77,9 @@ class	Player
 		if (g_clock - teleport_timeout < SecToTick(Sec(0.5)))
 			return
 
-		local	new_pos = ItemGetWorldPosition(target_item)
-		new_pos.y += Mtr(5.5)
+		local	new_pos = GetCylinderTopPosition(target_item)
+
+		MixerSoundStart(EngineGetMixer(g_engine), teleport_sfx)
 
 		ItemSetPosition(item, new_pos)
 		teleport_timeout = g_clock
@@ -91,5 +94,12 @@ class	Player
 		print("Player::OnSetup()")
 		scene = ItemGetScene(item)
 		teleport_timeout = g_clock
+
+		teleport_sfx = EngineLoadSound(g_engine, "sfx/tp.wav")
+	}
+
+	function	GetCylinderTopPosition(item_cyl)
+	{
+		return (ItemGetWorldPosition(item_cyl) + Vector(0,Mtr(5.0),0) + Vector(0, Mtr(0.5), 0))
 	}
 }

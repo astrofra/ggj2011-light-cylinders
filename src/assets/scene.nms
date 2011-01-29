@@ -21,6 +21,16 @@
 				<MotionPlayer=
 					<Motions>
 				>
+				<ScriptedObject=
+					<ScriptUnit=
+						<Script="scripts/camera.nut">
+						<Class="GameCamera">
+					>
+				>
+				<ScriptUnit=
+					<Script="scripts/camera.nut">
+					<Class="GameCamera">
+				>
 				<PhysicItem=
 					<SelfMask=1>
 					<Mask=1>
@@ -283,7 +293,7 @@
 		<MObject=
 			<MItem=
 				<Id="ground">
-				<UId=18>
+				<UId=4>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -378,7 +388,7 @@
 		<MObject=
 			<MItem=
 				<Id="ground">
-				<UId=19>
+				<UId=5>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -473,7 +483,7 @@
 		<MObject=
 			<MItem=
 				<Id="ground">
-				<UId=20>
+				<UId=6>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -568,7 +578,7 @@
 		<MObject=
 			<MItem=
 				<Id="ground">
-				<UId=21>
+				<UId=7>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -663,7 +673,7 @@
 		<MObject=
 			<MItem=
 				<Id="ground">
-				<UId=22>
+				<UId=8>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -758,7 +768,7 @@
 		<MObject=
 			<MItem=
 				<Id="ground">
-				<UId=23>
+				<UId=9>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -853,7 +863,7 @@
 		<MObject=
 			<MItem=
 				<Id="ground">
-				<UId=24>
+				<UId=10>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -948,7 +958,7 @@
 		<MObject=
 			<MItem=
 				<Id="ground">
-				<UId=25>
+				<UId=11>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -1043,7 +1053,7 @@
 		<MObject=
 			<MItem=
 				<Id="cylinder">
-				<UId=26>
+				<UId=12>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -1138,7 +1148,7 @@
 		<MObject=
 			<MItem=
 				<Id="cylinder">
-				<UId=27>
+				<UId=13>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -1233,7 +1243,7 @@
 		<MObject=
 			<MItem=
 				<Id="cylinder">
-				<UId=28>
+				<UId=14>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -1328,7 +1338,7 @@
 		<MObject=
 			<MItem=
 				<Id="cylinder">
-				<UId=29>
+				<UId=15>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -1423,7 +1433,7 @@
 		<MObject=
 			<MItem=
 				<Id="cylinder">
-				<UId=30>
+				<UId=16>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -1518,12 +1528,22 @@
 		<MLight=
 			<MItem=
 				<Id="light_0">
-				<UId=4>
+				<UId=17>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
 				<MotionPlayer=
 					<Motions>
+				>
+				<ScriptedObject=
+					<ScriptUnit=
+						<Script="scripts/player_light.nut">
+						<Class="PlayerLight">
+					>
+				>
+				<ScriptUnit=
+					<Script="scripts/player_light.nut">
+					<Class="PlayerLight">
 				>
 				<PhysicItem=
 					<SelfMask=1>
@@ -1537,7 +1557,7 @@
 				<Item=
 					<Position=
 						<X=0.000000>
-						<Y=1.518815>
+						<Y=0.758500>
 						<Z=0.000000>
 					>
 					<ItemFlag>
@@ -1563,11 +1583,7 @@
 	>
 	<Links=
 		<Link=
-			<Item=0>
-			<Link=3>
-		>
-		<Link=
-			<Item=4>
+			<Item=17>
 			<Link=3>
 		>
 	>
