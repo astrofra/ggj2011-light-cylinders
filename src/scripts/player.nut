@@ -29,6 +29,8 @@ class	Player
 	sfx_target_no_ok	=	0
 	sfx_target_ok		=	0
 
+	y_offset			=	1.0
+
 	/*!
 		@short	OnUpdate
 		Called during the scene update, each frame.
@@ -72,6 +74,19 @@ class	Player
 					TeleportTo(item, hit.item)
 			}
 		}
+
+		StickOnCylinderTop(item)
+	}
+
+	function	StickOnCylinderTop(item)
+	{
+		pos = ItemGetWorldPosition(item)
+		local	hit = SceneCollisionRaytrace(scene, pos , Vector(0, -1, 0), -1, CollisionTraceAll, Mtr(5.0))
+		if (hit.hit)
+		{
+			pos.y = GetCylinderTopPosition(hit.item).y
+			ItemSetPosition(item, pos)
+		}
 	}
 
 	function	TeleportTo(item, target_item)
@@ -112,6 +127,6 @@ class	Player
 
 	function	GetCylinderTopPosition(item_cyl)
 	{
-		return (ItemGetWorldPosition(item_cyl) + Vector(0,Mtr(5.0),0) + Vector(0, Mtr(0.5), 0))
+		return (ItemGetWorldPosition(item_cyl) + Vector(0,Mtr(5.0),0) + Vector(0, Mtr(y_offset), 0))
 	}
 }

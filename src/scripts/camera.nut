@@ -24,7 +24,7 @@ class	GameCamera
 		player_pos	=	ItemGetPosition(player_item)
 		player_rot	=	ItemGetRotation(player_item)
 
-		player_pos_lerp = player_pos_lerp.Lerp(0.9, player_pos) 
+		player_pos_lerp = player_pos_lerp.Lerp(0.75, player_pos) 
 		ItemSetPosition(item, player_pos_lerp)
 		ItemSetRotation(item, player_rot)
 	}
