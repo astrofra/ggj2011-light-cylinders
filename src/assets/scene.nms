@@ -1063,7 +1063,7 @@
 		<MLight=
 			<MItem=
 				<Id="light_0">
-				<UId=17>
+				<UId=12>
 				<Active>
 				<Priority=0.500000>
 				<ScriptLogicFq=15.000000>
@@ -1118,7 +1118,7 @@
 	>
 	<Links=
 		<Link=
-			<Item=17>
+			<Item=12>
 			<Link=3>
 		>
 	>

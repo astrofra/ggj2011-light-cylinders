@@ -7,6 +7,9 @@
 	@short	player
 	@author	Syl_Fra_Mat
 */
+
+g_current_cyl	<-	0
+
 class	Player
 {
 
@@ -68,7 +71,13 @@ class	Player
 		{
 			if (ItemGetName(hit.item) == "cylinder")
 			{
-				RendererDrawCross(EngineGetRenderer(g_engine), hit.p)
+				local	_color 
+				if ((ItemGetWorldPosition(item).y + Mtr(1.5)) < GetCylinderTopPosition(hit.item).y)
+					_color = Vector(1,0,0,1)
+				else
+					_color = Vector(0,1,0,1)
+
+				RendererDrawCrossColored(EngineGetRenderer(g_engine), hit.p, _color)
 
 				if (MousePoolFunction(DeviceButton0))
 					TeleportTo(item, hit.item)
@@ -76,6 +85,9 @@ class	Player
 		}
 
 		StickOnCylinderTop(item)
+
+		local	altitude = (ItemGetWorldPosition(item).y * 5).tointeger()
+		SceneGetScriptInstance(scene).UpdateTimeout(altitude)
 	}
 
 	function	StickOnCylinderTop(item)
@@ -92,7 +104,7 @@ class	Player
 	function	TeleportTo(item, target_item)
 	{
 
-		if (GetCylinderTopPosition(target_item).y > ItemGetWorldPosition(item).y)
+		if ((ItemGetWorldPosition(item).y + Mtr(1.5)) < GetCylinderTopPosition(target_item).y)
 		{			
 			MixerSoundStart(EngineGetMixer(g_engine), sfx_target_no_ok)
 			return
@@ -107,6 +119,8 @@ class	Player
 		MixerSoundStart(EngineGetMixer(g_engine), teleport_sfx)
 
 		ItemSetPosition(item, new_pos)
+
+		g_current_cyl = target_item
 		teleport_timeout = g_clock
 	}
 
