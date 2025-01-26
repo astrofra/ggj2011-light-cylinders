@@ -10,9 +10,9 @@ The prototype was developed using:
 
 While the game was recreated in Unity for the final GGJ release, this repository preserves the original prototype, including the scripts and mechanics, as a testament to the rapid prototyping process that could be achieved with GameStart 3D during the jam.
 
-### Key Features
+### "Key" Features (erm, for a 12h prototype)
 - Dynamic light and movement mechanics.
 - Procedurally spawned cylinders.
 - Minimalist, monochromatic visual style.
 
-Feel free to explore or adapt this code to your own projects. This repository aims to preserve the spirit of experimentation and collaboration fostered by game jams.
+Feel free to explore or adapt this code to your own projects. This repository aims to preserve the spirit of experimentation and collaboration fostered by game jams :)
