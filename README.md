@@ -10,7 +10,7 @@ The prototype was developed using:
 - **GameStart 3D**: an early version of what would later become the [HARFANG 3D engine](https://github.com/harfang3d/harfang3d).
 - **Squirrel**: a lightweight [scripting language](https://github.com/albertodemichelis/squirrel).
 
-While the game was recreated in Unity for the final GGJ release, this repository preserves the original prototype, including the scripts and mechanics, as a testament to the rapid prototyping process that could be achieved with GameStart 3D during the jam.
+While the [final game was rewrote in Unity](https://web.archive.org/web/20110202161404/http://www.globalgamejam.org/2011/light-cylinders) for the GGJ release, this repository preserves the original prototype, including the scripts and mechanics, as a testament to the rapid prototyping process that could be achieved with GameStart 3D during the jam.
 
 **Credits:**<br>
 - Astrofra (3D/code)
