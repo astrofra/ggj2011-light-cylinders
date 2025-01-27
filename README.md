@@ -12,6 +12,11 @@ The prototype was developed using:
 
 While the game was recreated in Unity for the final GGJ release, this repository preserves the original prototype, including the scripts and mechanics, as a testament to the rapid prototyping process that could be achieved with GameStart 3D during the jam.
 
+**Credits:**<br>
+- Astrofra (3D/code)
+- Blackfall (audio)
+- Sly (concept)
+
 ### "Key" Features (erm, for a 12h prototype)
 - Dynamic light and movement mechanics.
 - Procedurally spawned cylinders.
